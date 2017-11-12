@@ -26,8 +26,10 @@ public class graph {
 		for(int i =0; i<edgesOfVertices.length;i++) {
 			System.out.print(i + " : ");
 			for(int j =0; j<edgesOfVertices[i].length; j++) {
-				System.out.print(edgesOfVertices[i][j]);
+				System.out.print(edgesOfVertices[i][j] + ",");
+				
 			}
+			System.out.println();
 		}
 		
 	}
@@ -39,7 +41,11 @@ public class graph {
 		int edges = Integer.parseInt(data.nextLine());
 		
 		int[][] edgesOfVertices = new int[vertices][2];
-		
+		for(int i = 0; i<edgesOfVertices.length; i++) {
+			for(int j = 0 ; j<edgesOfVertices[i].length; j++) {
+				edgesOfVertices[i][j] = -1;
+			}
+		}
 		String[] tempEdges = new String[2];
 		String temp;
 		for(int i =0; i<vertices; i++) {
@@ -47,12 +53,15 @@ public class graph {
 			tempEdges = temp.split(" ");
 			int num1 = Integer.parseInt(tempEdges[0]);
 			int num2 = Integer.parseInt(tempEdges[1]);
-			if(edgesOfVertices[num1].length == -1) {
-		
+			
+			if(edgesOfVertices[num1][0] == -1) {
 				edgesOfVertices[num1][0] = num2;
-			}else if(edgesOfVertices[num2].length == -1) {
+			}else if(edgesOfVertices[num2][1] == -1) {
 				edgesOfVertices[num2][1] = num1;
 			}
+				
+				
+	
 		
 		
 		}
