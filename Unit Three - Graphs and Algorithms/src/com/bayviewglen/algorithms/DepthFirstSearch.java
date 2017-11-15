@@ -95,7 +95,7 @@ public class DepthFirstSearch {
 
     
     public static void test1(){
-    	 In in = new In(new File("testdata/tinyGraph.dat"));
+    	 In in = new In(new File("data/graph.dat"));
          Graph G = new Graph(in);
          int s = 0;
          DepthFirstSearch search = new DepthFirstSearch(G, s);
